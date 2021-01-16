@@ -10,7 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class LoginUser extends JFrame {
+public class LoginUser {
+     private JFrame frame;
      private JPanel panel;
      private JLabel welcomeMessage;
      private JButton loginButton, signupButton, forgetButton;
@@ -18,10 +19,17 @@ public class LoginUser extends JFrame {
      private JPasswordField passwordField;
 
      public LoginUser() {
-          setLayout(null);
-          setBounds(500, 200, 200, 500);
+          frame = new JFrame();
+          frame.setTitle("Login User");
+          frame.setSize(500, 450);
+          frame.setLocationRelativeTo(null);
+          frame.setBackground(Color.CYAN);
+          frame.setResizable(true);
+          frame.setVisible(true);
+          frame.setLayout(null);
+          frame.setBounds(800, 200, 500, 500);
           panel = new JPanel();
-          setContentPane(panel);
+          frame.setContentPane(panel);
           panel.setLayout(null);
           // creating welcome message
           welcomeMessage = new JLabel();
@@ -62,17 +70,7 @@ public class LoginUser extends JFrame {
           panel.add(forgetButton);
 
           // action goes here for all
-
+          loginButton.addActionListener(e -> HomePage.createHomePage(frame, "Home Page"));
+          signupButton.addActionListener(e -> HomePage.createHomePage(frame, "Hello"));
      }
-
-     public static void main(String[] args) {
-          LoginUser loginUser = new LoginUser();
-          loginUser.setTitle("Login User");
-          loginUser.setSize(500, 450);
-          loginUser.setLocationRelativeTo(null);
-          loginUser.setBackground(Color.CYAN);
-          loginUser.setResizable(false);
-          loginUser.setVisible(true);
-     }
-
 }
