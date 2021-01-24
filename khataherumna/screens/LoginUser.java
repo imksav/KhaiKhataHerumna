@@ -1,7 +1,6 @@
 package khataherumna.screens;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -68,9 +67,10 @@ public class LoginUser {
           forgetButton.setText("Forget Password");
           forgetButton.setBounds(190, 265, 130, 30);
           panel.add(forgetButton);
+          frame.setLayout(new FlowLayout());
 
           // action goes here for all
           loginButton.addActionListener(e -> HomePage.createHomePage(frame, "Home Page"));
-          signupButton.addActionListener(e -> HomePage.createHomePage(frame, "Hello"));
+          signupButton.addActionListener(e -> HomePage.createHomePage(frame, "Sign Up"));
      }
 }
