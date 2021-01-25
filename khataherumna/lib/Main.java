@@ -1,12 +1,18 @@
 package khataherumna.lib;
 
-import khataherumna.screens.HomePage;
-import khataherumna.screens.LoginUser;
-import java.awt.Color;
-import java.awt.Font;
+import khataherumna.screens.LoginFrame;
+import java.awt.*;
+
+import javax.swing.*;
 
 public class Main {
      public static void main(String[] args) {
-          LoginUser loginUser = new LoginUser();
+          LoginFrame login = new LoginFrame();
+          login.setTitle("Login Form");
+          login.setVisible(true);
+          login.setBounds(10, 10, 370, 600);
+          login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          login.setResizable(false);
+
      }
 }
